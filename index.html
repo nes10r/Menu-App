@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azerbaidžaniecių ugnies kepsnine - Restorano Meniu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Azerbaidžaniecių ugnies kepsnine</span>
+                </div>
+                <div class="nav-menu">
+                    <button class="nav-link active" data-page="menu">
+                        <i class="fas fa-book-open"></i>
+                        <span>Meniu</span>
+                    </button>
+                    <button class="nav-link" data-page="about">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Apie mus</span>
+                    </button>
+                    <button class="nav-link" data-page="contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kontaktai</span>
+                    </button>
+                    <button class="nav-link" data-page="reservation">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Rezervacija</span>
+                    </button>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu Page -->
+        <div id="menu-page" class="page active">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="restaurant-name">
+                        <i class="fas fa-bars"></i>
+                        Mūsų Meniu
+                    </h1>
+                    <p class="restaurant-subtitle">Autentiški azerbaidžaniečių kepsniai ir skoniai</p>
+                </div>
+            </header>
+
+            <!-- Category Navigation -->
+            <nav class="category-nav">
+                <div class="nav-scroll">
+                    <button class="nav-btn active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        Visi patiekalai
+                    </button>
+                    <button class="nav-btn" data-category="uzkandziai">
+                        <i class="fas fa-seedling"></i>
+                        Užkandžiai
+                    </button>
+                    <button class="nav-btn" data-category="sriubos">
+                        <i class="fas fa-bowl-hot"></i>
+                        Sriubos
+                    </button>
+                    <button class="nav-btn" data-category="pagrindinis">
+                        <i class="fas fa-drumstick-bite"></i>
+                        Pagrindiniai
+                    </button>
+                    <button class="nav-btn" data-category="desertai">
+                        <i class="fas fa-ice-cream"></i>
+                        Desertai
+                    </button>
+                    <button class="nav-btn" data-category="gerimi">
+                        <i class="fas fa-coffee"></i>
+                        Gėrimai
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Menu Content -->
+            <main class="menu-content">
+                <!-- Cart Section -->
+                <div class="cart-section" id="cart-section">
+                    <div class="cart-header" onclick="restaurantApp.toggleMobileCart()">
+                        <h3><i class="fas fa-shopping-cart"></i> Jūsų užsakymas</h3>
+                        <div class="cart-counter" id="cart-counter" style="display: none;">0</div>
+                        <div class="cart-header-buttons">
+                            <button class="cart-clear" onclick="event.stopPropagation(); restaurantApp.clearCart()" id="cart-clear-btn" style="display: none;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <button class="cart-close-mobile" onclick="event.stopPropagation(); restaurantApp.closeMobileCart()" id="cart-close-mobile" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart-items" id="cart-items">
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Pasirinkti patiekalai atsiras čia</p>
+                        </div>
+                    </div>
+                    <div class="cart-total" id="cart-total" style="display: none;">
+                        <div class="total-line">
+                            <span>Iš viso:</span>
+                            <span class="total-amount">€0.00</span>
+                        </div>
+                        <button class="cart-order-btn" onclick="restaurantApp.orderCart()">
+                            <i class="fab fa-whatsapp"></i>
+                            Užsakyti per WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Delivery Card -->
+                <div class="promo-card promo-right" id="mobile-order-card">
+                    <div class="promo-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3>Pristatymas į namus</h3>
+                    <p>Pristatome šiltus ir skanius patiekalus tiesiai į jūsų namus!</p>
+                    <div class="promo-features">
+                        <div class="promo-feature">
+                            <i class="fas fa-clock"></i>
+                            <span>30-45 min.</span>
+                        </div>
+                        <div class="promo-feature">
+                            <i class="fas fa-euro-sign"></i>
+                            <span>€2.50 pristatymas</span>
+                        </div>
+                        <div class="promo-feature" onclick="window.open('https://wa.me/37065029101?text=Sveiki! Noriu užsisakyti maistą. Ar galite man padėti?')" style="cursor: pointer;">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+370 5 123 4567</span>
+                        </div>
+                    </div>
+                    <button class="promo-btn" onclick="window.open('https://wa.me/37065029101?text=Sveiki! Noriu užsisakyti maistą. Kokius patiekalus rekomenduojate?')">
+                        <i class="fab fa-whatsapp"></i>
+                        Užsakyti per WhatsApp
+                    </button>
+                </div>
+
+                <!-- Mobile Order Toggle Button -->
+                <button class="mobile-order-toggle" onclick="restaurantApp.toggleMobileOrder()">
+                    <i class="fas fa-motorcycle"></i>
+                </button>
+
+                <div id="menu-items" class="menu-grid">
+                    <!-- Menu items will be inserted here -->
+                </div>
+            </main>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state">
+                <i class="fas fa-utensils"></i>
+                <h3>Meniu dar nėra patiekalų</h3>
+                <p>Naudokite administratoriaus skydelį pridėti patiekalų</p>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page">
+            <header class="page-header">
+                <h1>Apie mus</h1>
+                <p>Susipažinkite su mūsų istorija ir vertybėmis</p>
+            </header>
+            
+            <div class="page-content">
+                <div class="about-section">
+                    <div class="about-image">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2>Mūsų istorija</h2>
+                        <p>Azerbaidžaniecių ugnies kepsnine - tai restoranas, kuriame tradicijos susitinka su modernumu. Nuo 2020 metų mes teikiame išskirtinę kulinarinę patirtį mūsų svečiams.</p>
+                        <p>Mūsų virtuvėje dirba patyrę šefai, kurie kuria nepakartojamus patiekalus iš aukščiausios kokybės produktų.</p>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Su meile gaminta</h3>
+                        <p>Kiekvienas patiekalas ruošiamas su meile ir dėmesiu detalėms</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Šviežūs produktai</h3>
+                        <p>Naudojame tik šviežiausius ir geriausius vietinius produktus</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Šeimyniškas</h3>
+                        <p>Jauki atmosfera, kuri tinka visom šeimos nariam</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Greitas aptarnavimas</h3>
+                        <p>Profesionalus personalas užtikrina greitą ir kokybišką aptarnavimą</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page">
+            <header class="page-header">
+                <h1>Kontaktai</h1>
+                <p>Susisiekite su mumis bet kuriuo metu</p>
+            </header>
+            
+            <div class="page-content">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Informacija</h2>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresas</h4>
+                                <p>Gedimino pr. 15, Vilnius 01103</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefonas</h4>
+                                <p>+370 5 123 4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>El. paštas</h4>
+                                <p>info@azerbaidzan-kepsnine.lt</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Darbo laikas</h4>
+                                <p>Pirmadienį - Sekmdienį<br>11:00 - 23:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Rašykite mums</h2>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Vardas *</label>
+                                <input type="text" id="contact-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">El. paštas *</label>
+                                <input type="email" id="contact-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Telefonas</label>
+                                <input type="tel" id="contact-phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Žinutė *</label>
+                                <textarea id="contact-message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Siųsti žinutę</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservation Page -->
+        <div id="reservation-page" class="page">
+            <header class="page-header">
+                <h1>Rezervacija</h1>
+                <p>Rezervuokite stalą ir mėgaukitės nepakartojamai vakaro atmosfera</p>
+            </header>
+            
+            <div class="page-content">
+                <div class="reservation-container">
+                    <div class="reservation-info">
+                        <h2>Kodėl verta rezervuoti?</h2>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> Garantuotas stalas jūsų pageidaujiamu laiku</li>
+                            <li><i class="fas fa-check-circle"></i> Specialūs pasiūlymai rezervuojantiems</li>
+                            <li><i class="fas fa-check-circle"></i> Galimumo pasirinkti geriausią stalą</li>
+                            <li><i class="fas fa-check-circle"></i> Individualu aptarnavimas</li>
+                        </ul>
+
+                        <div class="reservation-note">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Rezervacija galima iki 14 dienų iš anksto. Didelėms grupėms (8+ asmenys) prašome skambinti tiesiogiai.</p>
+                        </div>
+                    </div>
+
+                    <div class="reservation-form-container">
+                        <form class="reservation-form" id="reservation-form">
+                            <h2>Rezervuoti stalą</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="res-name">Vardas *</label>
+                                    <input type="text" id="res-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="res-phone">Telefonas *</label>
+                                    <input type="tel" id="res-phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="res-date">Data *</label>
+                                    <input type="date" id="res-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="res-time">Laikas *</label>
+                                    <select id="res-time" required>
+                                        <option value="">Pasirinkite laiką</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="11:30">11:30</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="12:30">12:30</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="13:30">13:30</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="14:30">14:30</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="15:30">15:30</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="16:30">16:30</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="17:30">17:30</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="19:30">19:30</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="20:30">20:30</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="21:30">21:30</option>
+                                        <option value="22:00">22:00</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-guests">Svečių skaičius *</label>
+                                <select id="res-guests" required>
+                                    <option value="">Pasirinkite skaičių</option>
+                                    <option value="1">1 asmuo</option>
+                                    <option value="2">2 asmenys</option>
+                                    <option value="3">3 asmenys</option>
+                                    <option value="4">4 asmenys</option>
+                                    <option value="5">5 asmenys</option>
+                                    <option value="6">6 asmenys</option>
+                                    <option value="7">7 asmenys</option>
+                                    <option value="8">8+ asmenys</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-notes">Papildomi pageidavimai</label>
+                                <textarea id="res-notes" rows="3" placeholder="Pvz., gimtadienis, alergijos, specifiniai pageidavimai..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary">Rezervuoti stalą</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Skonių Namai</h4>
+                    <p>Autentiškas skonis ir šilta atmosfera kiekvienam svečiui.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="X (Twitter)">𝕏</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontaktai</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Gedimino pr. 15, Vilnius</p>
+                    <p><i class="fas fa-phone"></i> +370 5 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@azerbaidzan-kepsnine.lt</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Darbo laikas</h4>
+                    <p>Pirmadienį - Sekmadienį</p>
+                    <p>11:00 - 23:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Azerbaidžaniecių ugnies kepsnine. Visos teisės saugomos.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="add-menu-items.js"></script>
+</body>
+</html> 

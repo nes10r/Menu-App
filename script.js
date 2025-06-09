@@ -423,7 +423,7 @@ class RestaurantApp {
         const encodedMessage = encodeURIComponent(whatsappMessage);
         
         // Send to WhatsApp
-        window.open(`https://wa.me/37065029101?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/37066280705?text=${encodedMessage}`, '_blank');
 
         this.showNotification('Mesaj göndərildi! WhatsApp açıldı.', 'success');
         document.getElementById('contact-form').reset();
@@ -485,7 +485,7 @@ class RestaurantApp {
         const encodedMessage = encodeURIComponent(whatsappMessage);
         
         // Send to WhatsApp
-        window.open(`https://wa.me/37065029101?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/37066280705?text=${encodedMessage}`, '_blank');
 
         // Save reservation locally
         this.saveReservation(reservationData);
@@ -880,7 +880,7 @@ class RestaurantApp {
         message += `📞 Laukiu skambučio patvirtinimui!`;
 
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/37065029101?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/37066280705?text=${encodedMessage}`, '_blank');
         
         this.showNotification('Užsakymas išsiųstas į WhatsApp!', 'success');
     }

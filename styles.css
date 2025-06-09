@@ -1070,6 +1070,110 @@ html {
     margin-bottom: 1.25rem;
 }
 
+/* Directions Link */
+.directions-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: var(--transition);
+}
+
+.directions-link:hover {
+    color: var(--primary-color);
+}
+
+/* Map Section */
+.map-section {
+    margin-top: 3rem;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-section h2 {
+    padding: 2rem 2rem 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.map-container {
+    position: relative;
+    padding: 0 2rem 2rem;
+}
+
+.map-container iframe {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.map-overlay {
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-hover);
+    max-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-info h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.map-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.map-info i {
+    color: var(--secondary-color);
+    width: 16px;
+}
+
+.map-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.map-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.map-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
 /* Reservation Page */
 .reservation-container {
     display: grid;
@@ -1484,6 +1588,36 @@ html {
     .reservation-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    /* Map mobile styles */
+    .map-section h2 {
+        padding: 1.5rem 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    .map-container {
+        padding: 0 1rem 1.5rem;
+    }
+
+    .map-overlay {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 1rem;
+        max-width: none;
+        background: var(--card-background);
+        backdrop-filter: none;
+        border: 1px solid var(--border-color);
+    }
+
+    .map-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .map-btn {
+        justify-content: center;
     }
     
     .form-row {

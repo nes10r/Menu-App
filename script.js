@@ -562,10 +562,16 @@ class RestaurantApp {
         script.onload = () => {
             console.log('Menu items script loaded');
             this.scriptLoading = false;
-            // Don't reload, just render what we have
-            setTimeout(() => {
-                this.renderMenu();
-            }, 500);
+            // Manually call addMenuItems to prevent duplicates
+            if (window.addMenuItems) {
+                window.addMenuItems();
+            } else {
+                setTimeout(() => {
+                    if (window.addMenuItems) {
+                        window.addMenuItems();
+                    }
+                }, 100);
+            }
         };
         script.onerror = () => {
             console.error('Failed to load menu items script');

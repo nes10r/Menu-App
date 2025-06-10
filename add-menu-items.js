@@ -9,152 +9,232 @@ function addMenuItems() {
     }
 
     const menuItems = [
-        // Pagrindiniai patiekalai (Ana yemeklər)
         {
-            name: "Jautienos šašlykas",
-            description: "Marinuota jautiena su šviežiais prieskoniais",
-            price: 12.50,
+            name: "Vistiena ant grilio",
+            description: "Marinuota vištiena su šviežiais prieskoniais, kepta ant grilio.",
+            price: 14.00,
             category: "pagrindinis",
             image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Kiaulienos šašlykas",
-            description: "Sultinga kiaulienos nugarinė su česnakais",
-            price: 11.80,
-            category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1598515213692-d872bd5ce022?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
-        },
-        {
-            name: "Avienos šašlykas",
-            description: "Šviežia avienos šlaunelė su rozmarinais",
-            price: 14.20,
-            category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
-        },
-        {
-            name: "Vištienos šašlykas",
-            description: "Marinuota vištienos krūtinėlė su žolelėmis",
-            price: 10.90,
-            category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1598515213692-d872bd5ce022?w=800&h=600&fit=crop&crop=center"
-        },
-        {
-            name: "Mišrūs šašlykai",
-            description: "Jautienos, kiaulienos ir vištienos mišinys",
+            name: "Lule kebabas",
+            description: "Malta mėsa su prieskoniais, kepta ant iešmo.",
             price: 13.50,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1618219908458-e7b2c9143ddb?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Lyvekos šašlykas",
-            description: "Tradicinis lietuviškas lyvekos kepsnys",
-            price: 13.80,
+            name: "Vistienos sparneliai kebabas",
+            description: "Vištienos sparneliai, kepti ant grilio su prieskoniais.",
+            price: 10.60,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Cepelinai",
-            description: "Bulvių virtiniai su mėsa ir spirgučiais",
-            price: 9.50,
+            name: "Vistienos krūtinėlės kebabas",
+            description: "Vištienos krūtinėlė, marinuota ir kepta ant grilio.",
+            price: 11.20,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1545907623-8d67a7baff35?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Kugelis",
-            description: "Tradicinis lietuviškas bulvių patiekalas",
-            price: 8.90,
+            name: "Jautienos kepenėly kebabas",
+            description: "Jautienos kepenėlės, marinuotos ir keptos ant grilio.",
+            price: 8.70,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Kotletai su bulvėmis",
-            description: "Namie darytų kotletų su viruėmis bulvėmis",
-            price: 10.20,
+            name: "Avienos iešmo kebabas",
+            description: "Avienos gabaliukai, kepti ant iešmo su prieskoniais.",
+            price: 16.40,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1562007908-17c67e878c88?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Žuvis ant griliaus",
-            description: "Šviežia žuvis su citrinos ir česnako padažu",
-            price: 15.50,
+            name: "Vėsios jautienos kebabas",
+            description: "Troškinta jautiena su prieskoniais, patiekiama šilta.",
+            price: 14.40,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1555962580-e380875cadd7?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Dešrelės ant griliaus",
-            description: "Aukščiausios kokybės dešrelės su padažais",
-            price: 7.80,
+            name: "Vistienos kile kebabas",
+            description: "Vištienos filė, marinuota ir kepta ant grilio.",
+            price: 11.80,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Jautienos brizgetas",
-            description: "Sultingas jautienos brizgetas su svogūnais",
-            price: 16.90,
+            name: "Chano kebabas",
+            description: "Tradicinis kebabas su įvairia mėsa ir prieskoniais.",
+            price: 14.80,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Kepti baklažanai",
-            description: "Aniksėta ir grilyje kepsėjas baklažanai",
-            price: 8.50,
+            name: "Bulvių košė su kotletu",
+            description: "Bulvių košė su keptu mėsos kotletu.",
+            price: 5.40,
+            category: "kiti",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Grikiai su kotletu",
+            description: "Grikiai patiekiami su keptu mėsos kotletu.",
+            price: 4.80,
+            category: "kiti",
+            image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Kotlet yumurta",
+            description: "Keptas kotletas su kiaušiniu.",
+            price: 4.70,
+            category: "kiti",
+            image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Pomidorai su vaissiniais",
+            description: "Kepti pomidorai su kiaušiniais.",
+            price: 4.20,
+            category: "kiti",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Plovas su ašqara",
+            description: "Tradicinis plovas su kepta mėsa.",
+            price: 4.80,
+            category: "kiti",
+            image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Lęšių sriuba",
+            description: "Lęšių sriuba su daržovėmis ir prieskoniais.",
+            price: 3.20,
+            category: "sriuba",
+            image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Dusbarų sriuba",
+            description: "Tradicinė sriuba su mažais mėsos koldūnais.",
+            price: 3.80,
+            category: "sriuba",
+            image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Trošinti jautiena",
+            description: "Troškinta jautiena su prieskoniais.",
+            price: 12.50,
+            category: "kiti",
+            image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Granatų troškinys",
+            description: "Troškinta mėsa su granatų sultimis ir prieskoniais.",
+            price: 13.50,
+            category: "kiti",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Dovga sriuba",
+            description: "Gaivi jogurto sriuba su žolelėmis ir ryžiais.",
+            price: 3.50,
+            category: "sriuba",
+            image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Žuvies grilis",
+            description: "Ant grilio kepta žuvis su prieskoniais.",
+            price: 12.80,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1588043108151-c10c49bf78fe?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Sparneliai",
-            description: "Aštriavaviški sparneliai su BBQ padažu",
-            price: 9.80,
+            name: "Žuvies mailius",
+            description: "Keptas mažas žuvis su prieskoniais.",
+            price: 10.5,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Kiaulienos šonkauliai",
-            description: "Lėtai kepti šonkauliai su medaus glajumi",
-            price: 17.50,
+            name: "Veršiena su grietinėle",
+            description: "Troškinta veršiena su grietinėlės padažu.",
+            price: 14.80,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Daržovių mišinys",
-            description: "Grilyje keptos sezoninės daržovės",
-            price: 7.20,
+            name: "Vištiena Roll",
+            description: "Vištienos suktinukas su daržovėmis.",
+            price: 11.80,
             category: "pagrindinis",
-            image: "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=800&h=600&fit=crop&crop=center"
-        },
-
-        // Užkandžiai (Qəlyanaltılar)
-        {
-            name: "Kepta duona su česnaku",
-            description: "Šviežia duona su aromatingais česnakais",
-            price: 4.50,
-            category: "uzkandziai",
-            image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=800&h=600&fit=crop&crop=center"
-        },
-
-        // Sriubos (Şorbalar)
-        {
-            name: "Borščas",
-            description: "Tradicinė burokėlių sriuba su grietine",
-            price: 6.80,
-            category: "sriubos",
-            image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&h=600&fit=crop&crop=center"
+            image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Šaltibarščiai",
-            description: "Rožinė burokėlių sriuba su šviežiais agurkais",
-            price: 5.90,
-            category: "sriubos",
-            image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&h=600&fit=crop&crop=center"
+            name: "Jautiena roll",
+            description: "Jautienos suktinukas su prieskoniais.",
+            price: 14.5,
+            category: "pagrindinis",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         },
         {
-            name: "Bulvių sriuba",
-            description: "Tiršta bulvių sriuba su šonine ir svogūnais",
-            price: 5.50,
-            category: "sriubos",
-            image: "https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?w=800&h=600&fit=crop&crop=center"
+            name: "Avienos troškinys",
+            description: "Troškinta aviena su daržovėmis ir prieskoniais.",
+            price: 13.5,
+            category: "pagrindinis",
+            image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Avienos kepsnys",
+            description: "Kepta avienos išpjova su prieskoniais.",
+            price: 14.5,
+            category: "pagrindinis",
+            image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Piemens kepsnys",
+            description: "Tradicinis piemens kepsnys su mėsa ir bulvėmis.",
+            price: 13.5,
+            category: "pagrindinis",
+            image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Piemenų salotos",
+            description: "Šviežios daržovių salotos su žalumynais.",
+            price: 4.5,
+            category: "salotos",
+            image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Cezario salotos",
+            description: "Klasikinės Cezario salotos su vištiena ir sūriu.",
+            price: 6.5,
+            category: "salotos",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Baklažanų ruletės salotos",
+            description: "Baklažanų suktinukai su daržovėmis ir žalumynais.",
+            price: 6.8,
+            category: "salotos",
+            image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Marinuotų pomidorų salotos",
+            description: "Marinuotų pomidorų salotos su žalumynais.",
+            price: 5.2,
+            category: "salotos",
+            image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+        },
+        {
+            name: "Pomidorų ir agurkų salotos su graikiniais riešutais",
+            description: "Šviežių pomidorų ir agurkų salotos su graikiniais riešutais.",
+            price: 6.8,
+            category: "salotos",
+            image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
         }
     ];
+    
 
     // Add each menu item
     menuItems.forEach((item, index) => {
@@ -183,11 +263,7 @@ function addMenuItems() {
     }, menuItems.length * 100 + 500);
 }
 
-// Auto-run when page loads
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addMenuItems);
-} else {
-    addMenuItems();
-}
+// Manually trigger by calling addMenuItems()
+// Auto-run removed to prevent duplicate loading
 
 console.log('add-menu-items.js loaded successfully'); 

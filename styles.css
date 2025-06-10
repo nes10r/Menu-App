@@ -561,7 +561,12 @@ body {
 
     .cart-section:not(.mobile-expanded) .cart-items,
     .cart-section:not(.mobile-expanded) .cart-total {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        max-height: 0 !important;
     }
 
     .cart-counter {
@@ -1724,7 +1729,12 @@ html {
 
     .cart-section:not(.mobile-expanded) .cart-items,
     .cart-section:not(.mobile-expanded) .cart-total {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        max-height: 0 !important;
     }
 
     /* Cart counter badge */

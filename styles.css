@@ -429,7 +429,7 @@ body {
     .mobile-order-toggle {
         display: block !important;
         position: fixed;
-        bottom: 2rem;
+        bottom: 30px; /* Cart ikonun altında - cart bottom: 100px olduğu üçün */
         right: 2rem;
         width: 60px;
         height: 60px;
@@ -1808,7 +1808,7 @@ html {
     /* Mobile Order Floating Button */
     .mobile-order-toggle {
         position: fixed;
-        bottom: 2rem;
+        bottom: 30px; /* Cart ikonun altında - cart bottom: 100px olduğu üçün */
         right: 1rem; /* Cart ikonun altında sağ tərəfdə */
         width: 60px;
         height: 60px;

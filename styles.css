@@ -463,17 +463,30 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 1.25rem;
         margin-bottom: 2rem;
-    }
-    
-    .menu-content {
-        padding: 1.5rem 1rem;
+        margin-right: 0; /* Ensure grid doesn't extend under cart */
     }
     
     /* Desktop cart section adjustments for tablet */
     .cart-section {
-        width: 300px;
-        left: 1.5rem;
+        width: 280px;
+        right: 1rem; /* Move to right side */
+        left: auto; /* Remove left positioning */
+        top: 140px; /* Move down a bit */
+        z-index: 300; /* Lower z-index so it doesn't cover menu items as much */
+        max-height: calc(100vh - 220px);
         display: block !important; /* Ensure cart is visible on tablet */
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+        border: 1px solid var(--border-color);
+    }
+    
+    /* Adjust menu grid to give space for cart */
+    .menu-content {
+        padding: 1.5rem 300px 1.5rem 1rem; /* Right padding for cart space */
+    }
+    
+    /* Make cart header smaller on tablet */
+    .cart-header h3 {
+        font-size: 1rem;
     }
     
     /* Admin panel adjustments for tablet */

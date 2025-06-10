@@ -304,7 +304,12 @@ class RestaurantApp {
     toggleMobileOrder() {
         const orderCard = document.getElementById('mobile-order-card');
         if (orderCard) {
-            orderCard.classList.toggle('mobile-open');
+            // Check if we're on tablet (769px - 1024px) or mobile
+            const isTabletOrMobile = window.innerWidth <= 1024;
+            
+            if (isTabletOrMobile) {
+                orderCard.classList.toggle('mobile-open');
+            }
         }
     }
 

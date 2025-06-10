@@ -418,8 +418,60 @@ body {
     display: none;
 }
 
-/* Desktop: Show promo card normally */
-@media (min-width: 769px) {
+/* Tablet: Hide promo card to avoid overlapping menu items */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .promo-card {
+        display: none !important;
+    }
+    
+    .mobile-order-toggle {
+        display: block !important;
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 1001;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Tablet layout optimizations */
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+    
+    .menu-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* Desktop cart section adjustments for tablet */
+    .cart-section {
+        width: 300px;
+        left: 1.5rem;
+        display: block !important; /* Ensure cart is visible on tablet */
+    }
+    
+    /* Admin panel adjustments for tablet */
+    .admin-panel {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    /* Navigation improvements for tablet */
+    .nav-scroll {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+    
+    .nav-btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Desktop: Show promo card normally - only on larger screens */
+@media (min-width: 1025px) {
     .promo-card {
         display: block !important;
         position: fixed;
@@ -428,6 +480,10 @@ body {
         transform: translateY(-50%);
         width: 260px;
         z-index: 500;
+    }
+    
+    .mobile-order-toggle {
+        display: none !important;
     }
 }
 

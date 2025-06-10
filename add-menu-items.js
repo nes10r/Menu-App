@@ -103,7 +103,7 @@ function addMenuItems() {
         {
             name: "Plovas su ašqara",
             description: "Tradicinis plovas su kepta mėsa.",
-            price: 4.80,
+            price: 7.80,
             category: "kiti",
             image: "https://imageproxy.wolt.com/menu/menu-images/6213f642e289f69532dead20/a06ae51a-935a-11ec-81b9-36463625b8bd_milli_plov_ashqara.jpeg"
         },

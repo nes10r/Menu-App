@@ -476,7 +476,7 @@ body {
         height: 60px;
         border-radius: 50%;
         z-index: 700;
-        overflow: hidden;
+        overflow: visible; /* Allow cart counter to show outside */
         transition: all 0.3s ease;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         touch-action: manipulation;
@@ -1637,7 +1637,7 @@ html {
         height: 60px;
         border-radius: 50%;
         z-index: 700;
-        overflow: hidden;
+        overflow: visible; /* Allow cart counter to show outside */
         transition: all 0.3s ease;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         touch-action: manipulation;

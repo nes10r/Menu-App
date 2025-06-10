@@ -1299,11 +1299,10 @@ html {
 
 .restaurant-name-text {
     font-family: 'Exo', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
+    font-weight: 600;
+    font-size: 1.2rem;
     color: var(--primary-color);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
 .nav-menu {
@@ -2137,7 +2136,7 @@ html {
 }
 
 .restaurant-name-text {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
     
     .page-content {

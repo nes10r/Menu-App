@@ -321,36 +321,10 @@ class RestaurantApp {
         }
     }
 
-    // Add new menu item
+    // Add new menu item (DISABLED - items only from add-menu-items.js)
     addMenuItem() {
-        const name = document.getElementById('item-name').value.trim();
-        const description = document.getElementById('item-description').value.trim();
-        const price = parseFloat(document.getElementById('item-price').value);
-        const category = document.getElementById('item-category').value;
-        const image = document.getElementById('item-image').value.trim();
-
-        if (!name || !price || price <= 0) {
-            alert('Prašome užpildyti visus privalomas laukus!');
-            return;
-        }
-
-        const newItem = {
-            id: Date.now(),
-            name,
-            description,
-            price,
-            category,
-            image: image || null
-        };
-
-        this.menuItems.push(newItem);
-        this.saveMenuItems();
-        this.renderMenu();
-        this.clearForm();
-        this.hideAdminPanel();
-
-        // Show success message
-        this.showNotification('Patiekalas sėkmingai pridėtas!', 'success');
+        alert('Məhsul əlavə etmə deaktivdir. Yalnız add-menu-items.js faylından məhsullar gəlir.');
+        return;
     }
 
     // Delete menu item
@@ -597,7 +571,7 @@ class RestaurantApp {
         script.onerror = () => {
             console.error('Failed to load menu items script');
             this.scriptLoading = false;
-            this.addSampleItems();
+            console.log('add-menu-items.js yüklənmədi, boş meniu göstərilir.');
         };
         document.head.appendChild(script);
     }
@@ -607,20 +581,7 @@ class RestaurantApp {
         this.loadFromScript();
     }
 
-    // Add sample items if script fails
-    addSampleItems() {
-        this.menuItems = [
-            {
-                id: 1,
-                name: 'Cezario salotos',
-                description: 'Šviežios salotos su vištiena ir parmezano sūriu',
-                price: 8.50,
-                category: 'uzkandziai',
-                image: null
-            }
-        ];
-        this.renderMenu();
-    }
+
 
 
 

@@ -263,7 +263,11 @@ function addMenuItems() {
     }, menuItems.length * 100 + 500);
 }
 
-// Manually trigger by calling addMenuItems()
-// Auto-run removed to prevent duplicate loading
+// Auto-run when page loads (since loaded directly in HTML)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addMenuItems);
+} else {
+    addMenuItems();
+}
 
 console.log('add-menu-items.js loaded successfully'); 

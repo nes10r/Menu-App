@@ -540,50 +540,16 @@ class RestaurantApp {
         }, 3000);
     }
 
-    // Load menu items only from script (ignore localStorage cache)
+    // Load menu items - script loaded directly in HTML
     loadMenuItems() {
-        console.log('Loading menu items from script...');
-        this.loadFromScript();
+        console.log('Menu items will be loaded from HTML script...');
+        // add-menu-items.js is now loaded directly in HTML, no dynamic loading needed
     }
 
 
-
-    // Load menu items from add-menu-items.js script
-    loadFromScript() {
-        // Prevent multiple script loading
-        if (this.scriptLoading) {
-            console.log('Script artıq yüklənir...');
-            return;
-        }
-        this.scriptLoading = true;
-
-        const script = document.createElement('script');
-        script.src = 'add-menu-items.js';
-        script.onload = () => {
-            console.log('Menu items script loaded');
-            this.scriptLoading = false;
-            // Manually call addMenuItems to prevent duplicates
-            if (window.addMenuItems) {
-                window.addMenuItems();
-            } else {
-                setTimeout(() => {
-                    if (window.addMenuItems) {
-                        window.addMenuItems();
-                    }
-                }, 100);
-            }
-        };
-        script.onerror = () => {
-            console.error('Failed to load menu items script');
-            this.scriptLoading = false;
-            console.log('add-menu-items.js yüklənmədi, boş meniu göstərilir.');
-        };
-        document.head.appendChild(script);
-    }
-
-    // Reset menu data
+    // Reset menu data  
     resetMenuData() {
-        this.loadFromScript();
+        console.log('Menu data reset - refresh page to reload menu items');
     }
 
 

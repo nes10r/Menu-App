@@ -636,8 +636,183 @@ body {
     }
 }
 
-/* Desktop: Show promo card normally - only on larger screens */
-@media (min-width: 1025px) {
+/* Small Desktop: Use mobile/tablet behavior to avoid overlap */
+@media (min-width: 1025px) and (max-width: 1299px) {
+    .promo-card {
+        display: none !important;
+    }
+    
+    .mobile-order-toggle {
+        display: block !important;
+        position: fixed;
+        bottom: 30px;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        background: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+        transition: all 0.3s ease;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-order-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        background: #e67e22;
+    }
+    
+    .mobile-order-toggle:active {
+        transform: scale(0.95);
+    }
+    
+    /* Floating cart - tablet kimi davran */
+    .cart-section {
+        position: fixed;
+        bottom: 100px;
+        right: 2rem;
+        left: auto;
+        top: auto;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        z-index: 700;
+        overflow: visible;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .cart-section.mobile-expanded {
+        width: calc(100vw - 4rem);
+        height: auto;
+        max-height: 70vh;
+        border-radius: 20px;
+        bottom: 2rem;
+        right: 2rem;
+        left: 2rem;
+        z-index: 9999 !important;
+        overflow-y: auto;
+    }
+
+    .cart-header {
+        border-radius: 20px 20px 0 0;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header {
+        position: relative;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--secondary-color);
+        cursor: pointer;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header h3 {
+        display: none;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header::before {
+        content: '\f07a';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-clear,
+    .cart-section:not(.mobile-expanded) .cart-close-mobile {
+        display: none !important;
+    }
+
+    .cart-close-mobile {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: var(--transition);
+        font-size: 1.2rem;
+    }
+
+    .cart-close-mobile:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cart-header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header-buttons {
+        display: none;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-items,
+    .cart-section:not(.mobile-expanded) .cart-total {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        max-height: 0 !important;
+    }
+
+    /* Cart counter - gizli small desktop-da */
+    .cart-counter {
+        display: none !important;
+    }
+
+    .cart-section.mobile-expanded .cart-counter {
+        display: none !important;
+    }
+
+    /* Modal backdrop for expanded cart */
+    .cart-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .cart-backdrop.active {
+        display: block;
+        opacity: 1;
+    }
+    
+    /* Menu content normal padding */
+    .menu-content {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Large Desktop: Show promo card normally - only on very large screens */
+@media (min-width: 1300px) {
     .promo-card {
         display: block !important;
         position: fixed;

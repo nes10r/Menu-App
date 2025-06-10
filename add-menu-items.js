@@ -54,7 +54,7 @@ function addMenuItems() {
         {
             name: "Vėsios jautienos kebabas",
             description: "Troškinta jautiena su prieskoniais, patiekiama šilta.",
-            price: 14.40,
+            price: 17.40,
             category: "pagrindinis",
             image: "https://imageproxy.wolt.com/menu/menu-images/6392e6f7a3e66b1094c85d1e/241918ee-7796-11ed-94ed-6e8b3e9bfb77_10.jpeg"
         },
@@ -68,7 +68,7 @@ function addMenuItems() {
         {
             name: "Chano kebabas",
             description: "Tradicinis kebabas su įvairia mėsa ir prieskoniais.",
-            price: 14.80,
+            price: 17.80,
             category: "pagrindinis",
             image: "https://evdar.az/wp-content/uploads/Kabablarin-Krali-Xan-Kababi2.jpg"
         },
@@ -117,7 +117,7 @@ function addMenuItems() {
         {
             name: "Dusbarų sriuba",
             description: "Tradicinė sriuba su mažais mėsos koldūnais.",
-            price: 3.80,
+            price: 4.50,
             category: "sriuba",
             image: "https://imageproxy.wolt.com/menu/menu-images/5fddfe25208eded1e469d2e4/ca670950-4eef-11ee-acec-26f12bab3eec_dushbere.jpg"
         },

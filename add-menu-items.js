@@ -87,7 +87,7 @@ function addMenuItems() {
             image: "https://imageproxy.wolt.com/assets/682adf589eaf4abe19a54a90"
         },
         {
-            name: "Kotlet yumurta",
+            name: "Kiaušinis kotletas",
             description: "Keptas kotletas su kiaušiniu.",
             price: 4.70,
             category: "kiti",

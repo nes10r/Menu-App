@@ -430,7 +430,7 @@ body {
         display: block !important;
         position: fixed;
         bottom: 2rem;
-        left: 2rem;
+        right: 2rem;
         width: 60px;
         height: 60px;
         background: var(--accent-color);
@@ -1809,7 +1809,7 @@ html {
     .mobile-order-toggle {
         position: fixed;
         bottom: 2rem;
-        left: 1rem;
+        right: 1rem; /* Cart ikonun altında sağ tərəfdə */
         width: 60px;
         height: 60px;
         background: var(--accent-color);

@@ -505,6 +505,7 @@ body {
     }
 
     .cart-section:not(.mobile-expanded) .cart-header {
+        position: relative;
         border-radius: 50%;
         width: 60px;
         height: 60px;
@@ -1665,6 +1666,7 @@ html {
     }
 
     .cart-section:not(.mobile-expanded) .cart-header {
+        position: relative;
         border-radius: 50%;
         width: 60px;
         height: 60px;

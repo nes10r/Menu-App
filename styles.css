@@ -466,27 +466,148 @@ body {
         margin-right: 0; /* Ensure grid doesn't extend under cart */
     }
     
-    /* Desktop cart section adjustments for tablet */
+    /* Mobile-style cart for tablet */
     .cart-section {
-        width: 280px;
-        right: 1rem; /* Move to right side */
-        left: auto; /* Remove left positioning */
-        top: 140px; /* Move down a bit */
-        z-index: 300; /* Lower z-index so it doesn't cover menu items as much */
-        max-height: calc(100vh - 220px);
-        display: block !important; /* Ensure cart is visible on tablet */
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
-        border: 1px solid var(--border-color);
+        position: fixed;
+        bottom: 100px;
+        right: 1rem;
+        left: auto;
+        top: auto;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        z-index: 700;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .cart-section.mobile-expanded {
+        width: calc(100vw - 2rem);
+        height: auto;
+        max-height: 70vh;
+        border-radius: 20px;
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        z-index: 9999 !important;
+        overflow-y: auto;
+    }
+
+    .cart-header {
+        border-radius: 20px 20px 0 0;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--secondary-color);
+        cursor: pointer;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header h3 {
+        display: none;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header::before {
+        content: '\f07a';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-clear,
+    .cart-section:not(.mobile-expanded) .cart-close-mobile {
+        display: none !important;
+    }
+
+    .cart-close-mobile {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: var(--transition);
+        font-size: 1.2rem;
+    }
+
+    .cart-close-mobile:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cart-header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-header-buttons {
+        display: none;
+    }
+
+    .cart-section:not(.mobile-expanded) .cart-items,
+    .cart-section:not(.mobile-expanded) .cart-total {
+        display: none;
+    }
+
+    .cart-counter {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: var(--accent-color);
+        color: white;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border: 2px solid white;
+        z-index: 10;
+    }
+
+    .cart-section.mobile-expanded .cart-counter {
+        display: none !important;
+    }
+
+    /* Modal backdrop for expanded cart */
+    .cart-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .cart-backdrop.active {
+        display: block;
+        opacity: 1;
     }
     
-    /* Adjust menu grid to give space for cart */
+    /* Reset menu content padding for tablet */
     .menu-content {
-        padding: 1.5rem 300px 1.5rem 1rem; /* Right padding for cart space */
-    }
-    
-    /* Make cart header smaller on tablet */
-    .cart-header h3 {
-        font-size: 1rem;
+        padding: 1.5rem 1rem; /* Normal padding */
     }
     
     /* Admin panel adjustments for tablet */

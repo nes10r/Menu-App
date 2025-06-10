@@ -1943,4 +1943,13 @@ html {
     .nav-scroll {
         gap: 0.25rem;
     }
+}
+
+/* Cart counter - default gizli, mobile-də aktiv */
+.cart-counter {
+    display: none;
+}
+
+.mobile-order-toggle {
+    display: none;
 } 

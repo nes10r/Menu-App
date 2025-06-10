@@ -1290,6 +1290,13 @@ html {
     font-size: 1.75rem;
 }
 
+.logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
 .nav-menu {
     display: flex;
     gap: 0.5rem;
@@ -2112,8 +2119,13 @@ html {
     }
     
     .logo i {
-        font-size: 1.5rem;
-    }
+    font-size: 1.5rem;
+}
+
+.logo-image {
+    width: 35px;
+    height: 35px;
+}
     
     .page-content {
         padding: 1rem;

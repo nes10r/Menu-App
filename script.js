@@ -124,8 +124,6 @@ class RestaurantApp {
             });
         });
 
-
-
         // Contact form
         document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -145,8 +143,6 @@ class RestaurantApp {
                 this.toggleMobileMenu();
             });
         }
-
-
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
@@ -178,14 +174,6 @@ class RestaurantApp {
         
         // Dispatch custom event for scroll position management
         window.dispatchEvent(new CustomEvent('menuFiltered'));
-        
-        // Optional: Show filter notification (uncomment if wanted)
-        // const categoryName = this.getCategoryDisplayName(category);
-        // if (category === 'all') {
-        //     this.showNotification('Bütün məhsullar göstərilir', 'info');
-        // } else {
-        //     this.showNotification(`${categoryName} kateqoriyası seçildi`, 'info');
-        // }
     }
 
     // Get filtered menu items
@@ -647,10 +635,9 @@ class RestaurantApp {
             localStorage.setItem('menuItemsLoaded', 'true');
             this.scriptLoading = false;
             // Don't reload, just render what we have
-                                setTimeout(() => {
-                        this.renderMenu();
-                        // Removed notification - no need to show
-                    }, 500);
+            setTimeout(() => {
+                this.renderMenu();
+            }, 500);
         };
         script.onerror = () => {
             console.error('Failed to load menu items script');
@@ -889,9 +876,49 @@ class RestaurantApp {
     toggleMobileCart() {
         const cartSection = document.getElementById('cart-section');
         const closeBtn = document.getElementById('cart-close-mobile');
+        const backdrop = document.getElementById('cart-backdrop');
         
         if (cartSection) {
             cartSection.classList.toggle('mobile-expanded');
+            
+            // Body scroll kontrolu və backdrop
+            if (cartSection.classList.contains('mobile-expanded')) {
+                // Modal açıldığında scroll-u blokla
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                
+                // Backdrop göstər
+                if (backdrop) {
+                    backdrop.classList.add('active');
+                    backdrop.onclick = () => this.closeMobileCart();
+                }
+                
+                // Z-index problemlərini düzəlt
+                cartSection.style.zIndex = '9999';
+                
+                // Event listener əlavə et body click üçün
+                setTimeout(() => {
+                    document.addEventListener('click', this.handleOutsideClick.bind(this));
+                }, 100);
+            } else {
+                // Modal bağlandığında scroll-u açıq burax
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+                
+                // Backdrop gizlət
+                if (backdrop) {
+                    backdrop.classList.remove('active');
+                    backdrop.onclick = null;
+                }
+                
+                // Z-index geri dön
+                cartSection.style.zIndex = '700';
+                
+                // Event listener-i sil
+                document.removeEventListener('click', this.handleOutsideClick.bind(this));
+            }
             
             // Show/hide close button based on expanded state
             if (closeBtn) {
@@ -904,13 +931,44 @@ class RestaurantApp {
         }
     }
 
+    // Handle outside click to close modal
+    handleOutsideClick(event) {
+        const cartSection = document.getElementById('cart-section');
+        const cartHeader = cartSection?.querySelector('.cart-header');
+        
+        // Yalnız cart section xaricində click olunubsa bağla
+        if (cartSection && cartSection.classList.contains('mobile-expanded')) {
+            if (!cartSection.contains(event.target)) {
+                this.closeMobileCart();
+            }
+        }
+    }
+
     // Close mobile cart
     closeMobileCart() {
         const cartSection = document.getElementById('cart-section');
         const closeBtn = document.getElementById('cart-close-mobile');
+        const backdrop = document.getElementById('cart-backdrop');
         
         if (cartSection) {
             cartSection.classList.remove('mobile-expanded');
+            
+            // Body scroll-u açıq burax
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+            
+            // Backdrop gizlət
+            if (backdrop) {
+                backdrop.classList.remove('active');
+                backdrop.onclick = null;
+            }
+            
+            // Z-index geri dön
+            cartSection.style.zIndex = '700';
+            
+            // Event listener-i sil
+            document.removeEventListener('click', this.handleOutsideClick.bind(this));
         }
         
         if (closeBtn) {
@@ -961,10 +1019,17 @@ document.addEventListener('keydown', (e) => {
         }
     }
     
-    // Close admin panel with Escape
+    // Close modals with Escape
     if (e.key === 'Escape') {
         const adminForm = document.getElementById('admin-form');
-        if (!adminForm.classList.contains('hidden')) {
+        const cartSection = document.getElementById('cart-section');
+        
+        // Close cart modal if open
+        if (cartSection && cartSection.classList.contains('mobile-expanded')) {
+            window.restaurantApp.closeMobileCart();
+        }
+        // Close admin panel if open
+        else if (!adminForm.classList.contains('hidden')) {
             window.restaurantApp.hideAdminPanel();
         }
     }

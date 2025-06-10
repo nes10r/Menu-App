@@ -326,12 +326,21 @@ body {
     justify-content: center;
     gap: 0.5rem;
     transition: var(--transition);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 10;
 }
 
 .cart-order-btn:hover {
     background: #128c7e;
     transform: translateY(-2px);
     box-shadow: var(--shadow);
+}
+
+.cart-order-btn:active {
+    background: #128c7e;
+    transform: translateY(0);
 }
 
 .promo-card:hover {
@@ -1414,6 +1423,8 @@ html {
         overflow: hidden;
         transition: all 0.3s ease;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .cart-section.mobile-expanded {
@@ -1424,6 +1435,8 @@ html {
         bottom: 1rem;
         right: 1rem;
         left: 1rem;
+        z-index: 9999 !important;
+        overflow-y: auto;
     }
 
     .cart-header {
@@ -1519,6 +1532,25 @@ html {
         display: none !important;
     }
 
+    /* Modal backdrop for expanded cart */
+    .cart-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .cart-backdrop.active {
+        display: block;
+        opacity: 1;
+    }
+
     /* Transform promo card to mobile floating system */
     .promo-card {
         display: none;
@@ -1559,11 +1591,17 @@ html {
         z-index: 1001;
         transition: all 0.3s ease;
         display: block;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
     
     .mobile-order-toggle:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+    
+    .mobile-order-toggle:active {
+        transform: scale(0.95);
     }
     
     .page-header {

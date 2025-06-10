@@ -239,11 +239,10 @@ class RestaurantApp {
     // Get category display name in Lithuanian
     getCategoryDisplayName(category) {
         const categoryNames = {
-            'uzkandziai': 'Užkandžiai',
-            'sriubos': 'Sriubos',
             'pagrindinis': 'Pagrindiniai',
-            'desertai': 'Desertai',
-            'gerimi': 'Gėrimai'
+            'kiti': 'Kiti patiekalai',
+            'sriuba': 'Sriubos',
+            'salotos': 'Salotos'
         };
         return categoryNames[category] || category;
     }

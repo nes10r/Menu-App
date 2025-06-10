@@ -176,15 +176,10 @@ function addMenuItems() {
         }, index * 100); // Small delay between additions
     });
 
-    // Save and render after all items are added
+    // Render after all items are added
     setTimeout(() => {
-        // Remove duplicates before saving
-        window.restaurantApp.removeDuplicates();
-        window.restaurantApp.saveMenuItems();
         window.restaurantApp.renderMenu();
         console.log('All menu items added successfully!');
-        
-        // Success notification removed - no need to show
     }, menuItems.length * 100 + 500);
 }
 

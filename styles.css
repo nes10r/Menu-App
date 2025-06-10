@@ -1297,6 +1297,15 @@ html {
     border-radius: 8px;
 }
 
+.restaurant-name-text {
+    font-family: 'Exo', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
 .nav-menu {
     display: flex;
     gap: 0.5rem;
@@ -2125,6 +2134,10 @@ html {
 .logo-image {
     width: 65px;
     height: 65px;
+}
+
+.restaurant-name-text {
+    font-size: 1.1rem;
 }
     
     .page-content {

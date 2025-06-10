@@ -567,62 +567,13 @@ class RestaurantApp {
         }, 3000);
     }
 
-    // Load menu items from localStorage
+    // Load menu items only from script (ignore localStorage cache)
     loadMenuItems() {
-        // Clear any inconsistent category data
-        this.fixCategoryNames();
-        
-        if (localStorage.getItem('menuItemsLoaded') === 'true') {
-            const items = localStorage.getItem('menuItems');
-            if (items) {
-                try {
-                    this.menuItems = JSON.parse(items);
-                    // Remove duplicates after loading
-                    this.removeDuplicates();
-                    console.log('Menu items loaded from localStorage:', this.menuItems.length);
-                    // Render menu after loading
-                    setTimeout(() => {
-                        this.renderMenu();
-                    }, 100);
-                } catch (error) {
-                    console.error('Error parsing menu items:', error);
-                    this.resetMenuData();
-                }
-            } else {
-                console.log('No menu items in localStorage, loading from script...');
-                this.loadFromScript();
-            }
-        } else {
-            console.log('Menu items not loaded yet, loading from script...');
-            this.loadFromScript();
-        }
+        console.log('Loading menu items from script...');
+        this.loadFromScript();
     }
 
-    // Remove duplicate menu items
-    removeDuplicates() {
-        const seen = new Map();
-        const uniqueItems = [];
-        let duplicateCount = 0;
-        
-        this.menuItems.forEach(item => {
-            const key = item.name.toLowerCase().trim();
-            if (!seen.has(key)) {
-                seen.set(key, true);
-                uniqueItems.push(item);
-            } else {
-                console.log(`Təkrarlanan yemək silindi: ${item.name}`);
-                duplicateCount++;
-            }
-        });
-        
-        if (duplicateCount > 0) {
-            this.menuItems = uniqueItems;
-            this.saveMenuItems();
-            console.log(`${duplicateCount} təkrarlanan yemək silindi. Qalan: ${uniqueItems.length}`);
-            
-            // Notification removed - duplicates cleaned silently
-        }
-    }
+
 
     // Load menu items from add-menu-items.js script
     loadFromScript() {
@@ -637,7 +588,6 @@ class RestaurantApp {
         script.src = 'add-menu-items.js';
         script.onload = () => {
             console.log('Menu items script loaded');
-            localStorage.setItem('menuItemsLoaded', 'true');
             this.scriptLoading = false;
             // Don't reload, just render what we have
             setTimeout(() => {
@@ -654,8 +604,6 @@ class RestaurantApp {
 
     // Reset menu data
     resetMenuData() {
-        localStorage.removeItem('menuItems');
-        localStorage.removeItem('menuItemsLoaded');
         this.loadFromScript();
     }
 
@@ -671,52 +619,12 @@ class RestaurantApp {
                 image: null
             }
         ];
-        this.saveMenuItems();
         this.renderMenu();
     }
 
-    // Fix category names to match filter system
-    fixCategoryNames() {
-        const items = localStorage.getItem('menuItems');
-        if (items) {
-            const menuItems = JSON.parse(items);
-            let hasChanges = false;
-            
-            menuItems.forEach(item => {
-                // Fix category names to lowercase format
-                if (item.category === 'Pagrindiniai') {
-                    item.category = 'pagrindinis';
-                    hasChanges = true;
-                }
-                if (item.category === 'Užkandžiai') {
-                    item.category = 'uzkandziai';
-                    hasChanges = true;
-                }
-                if (item.category === 'Sriubos') {
-                    item.category = 'sriubos';
-                    hasChanges = true;
-                }
-                if (item.category === 'Desertai') {
-                    item.category = 'desertai';
-                    hasChanges = true;
-                }
-                if (item.category === 'Gėrimai') {
-                    item.category = 'gerimi';
-                    hasChanges = true;
-                }
-            });
-            
-            if (hasChanges) {
-                localStorage.setItem('menuItems', JSON.stringify(menuItems));
-                console.log('Fixed category names in localStorage');
-            }
-        }
-    }
 
-    // Save menu items to localStorage
-    saveMenuItems() {
-        localStorage.setItem('menuItems', JSON.stringify(this.menuItems));
-    }
+
+
 
     // Update quantity in cart
     updateQuantity(itemIndex, change) {

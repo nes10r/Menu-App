@@ -40,25 +40,15 @@ body {
 
 /* Header Styles */
 .header {
-    /* Banner image as main background */
-    background: url('Banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Light overlay only for text readability */
-    background: 
-        linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%), 
-        url('Banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%);
     color: white;
     padding: 1.5rem 1rem;
     text-align: center;
     box-shadow: var(--shadow);
     position: relative;
     min-height: 200px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
 }
 
 .header-content {

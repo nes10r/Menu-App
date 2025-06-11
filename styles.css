@@ -464,8 +464,24 @@ body {
     display: none;
 }
 
-/* Tablet: Hide promo card to avoid overlapping menu items */
+/* Tablet: Ayrı banner settings və layout */
 @media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet üçün header optimizasiyası */
+    .header {
+        min-height: 240px; /* Tablet üçün orta ölçü */
+        padding: 1.75rem 1rem; /* Balanslaşdırılmış */
+    }
+    
+    .header-content {
+        padding-top: 30px; /* Tablet üçün orta boşluq */
+    }
+    
+    /* Tablet üçün banner cover olsun */
+    .header-banner {
+        object-fit: cover !important; /* Tablet üçün cover */
+        object-position: center !important;
+    }
+    
     .promo-card {
         display: none !important;
     }
@@ -680,8 +696,24 @@ body {
     }
 }
 
-/* Small Desktop: Use mobile/tablet behavior to avoid overlap */
+/* Small Desktop: Orta ölçülü desktop */
 @media (min-width: 1025px) and (max-width: 1299px) {
+    /* Small desktop üçün header */
+    .header {
+        min-height: 260px; /* Orta ölçü */
+        padding: 2rem 1rem;
+    }
+    
+    .header-content {
+        padding-top: 40px; /* Orta boşluq */
+    }
+    
+    /* Small desktop üçün contain */
+    .header-banner {
+        object-fit: contain !important; /* Small desktop üçün contain */
+        object-position: center !important;
+    }
+    
     .promo-card {
         display: none !important;
     }
@@ -872,8 +904,23 @@ body {
     }
 }
 
-/* Large Desktop: Show promo card normally - only on very large screens */
+/* Large Desktop: Böyük ekranlar üçün optimal */
 @media (min-width: 1300px) {
+    /* Large desktop üçün banner tam contain */
+    .header {
+        min-height: 300px; /* Böyük ekran üçün tam ölçü */
+        padding: 2.5rem 1rem;
+    }
+    
+    .header-content {
+        padding-top: 60px; /* Böyük boşluq */
+    }
+    
+    .header-banner {
+        object-fit: contain !important; /* Böyük ekran üçün tam contain */
+        object-position: center !important;
+    }
+    
     .promo-card {
         display: block !important;
         position: fixed;

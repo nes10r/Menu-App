@@ -47,7 +47,7 @@ body {
     box-shadow: var(--shadow);
     position: relative;
     min-height: 300px; /* Banner üçün daha böyük */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Daha güclü kölgə overlay olmadan */
     overflow: hidden;
 }
 
@@ -84,16 +84,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%);
-    z-index: 1; /* Banner üzərində amma content altında */
+    background: transparent; /* Overlay aradan qaldırıldı */
+    z-index: 1;
 }
 
 .header-content {
     position: relative;
-    z-index: 2; /* Overlay üzərində */
+    z-index: 2; /* Banner üzərində */
     max-width: 600px;
     margin: 0 auto;
-    padding-top: 50px; /* Daha yaxşı mərkəzləmə */
+    padding: 50px 20px; /* Daha yaxşı mərkəzləmə */
+    background: rgba(0, 0, 0, 0.3); /* Yüngül arxa plan text üçün */
+    border-radius: 15px;
 }
 
 .restaurant-name {

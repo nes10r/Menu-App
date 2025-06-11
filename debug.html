@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Test</title>
+    <style>
+        .test-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            border: 2px solid red;
+            overflow: hidden;
+        }
+        
+        .test-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .test-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.3);
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Banner Test</h1>
+    
+    <div class="test-container">
+        <img src="./Banner.jpg" alt="Test Banner" class="test-banner" onload="console.log('Banner yükləndi!')" onerror="console.log('Banner yüklənə bilmədi!')">
+        <div class="test-content">
+            <h2>Test Mətn</h2>
+            <p>Bu banner üzərində görünməlidir</p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <h3>Fayl Məlumatları:</h3>
+        <p>Banner.jpg ölçüsü: ~6.7 MB</p>
+        <p>Banner yüklənib-yüklənməməsi console-da yazılacaq</p>
+    </div>
+    
+    <script>
+        console.log('Debug səhifə yükləndi');
+        
+        setTimeout(() => {
+            const banner = document.querySelector('.test-banner');
+            if (banner.complete && banner.naturalWidth > 0) {
+                console.log('Banner uğurla yükləndi:', banner.naturalWidth + 'x' + banner.naturalHeight);
+            } else {
+                console.log('Banner yüklənmədi və ya problem var');
+            }
+        }, 2000);
+    </script>
+</body>
+</html> 

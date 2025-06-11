@@ -113,8 +113,8 @@ body {
 }
 
 .menu-icon {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(70%) sepia(98%) saturate(1000%) hue-rotate(15deg);
 }
@@ -1277,8 +1277,8 @@ body.admin-mode .menu-item:hover .delete-btn {
     }
     
     .menu-icon {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     
     .restaurant-subtitle {

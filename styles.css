@@ -40,15 +40,22 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, rgba(52, 73, 94, 0.8) 0%, rgba(31, 51, 69, 0.9) 100%), url('Banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* Fallback background */
+    background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+    /* Banner image with overlay */
+    background: 
+        linear-gradient(135deg, rgba(52, 73, 94, 0.8) 0%, rgba(31, 51, 69, 0.9) 100%), 
+        url('Banner.jpg'),
+        linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+    background-size: cover, cover, cover;
+    background-position: center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
     color: white;
     padding: 1.5rem 1rem;
     text-align: center;
     box-shadow: var(--shadow);
     position: relative;
+    min-height: 200px;
 }
 
 .header-content {

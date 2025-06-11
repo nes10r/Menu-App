@@ -46,7 +46,7 @@ body {
     text-align: center;
     box-shadow: var(--shadow);
     position: relative;
-    min-height: 180px; /* Azaldılmış hündürlük */
+    min-height: 220px; /* Azaldılmış hündürlük */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     overflow: hidden;
 }
@@ -1197,9 +1197,18 @@ body.admin-mode .menu-item:hover .delete-btn {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header {
+        min-height: 250px; /* Mobile üçün daha böyük */
+        padding: 2rem 1rem; /* Daha rahat padding */
+    }
+    
+    .header-content {
+        padding-top: 30px; /* Mobile üçün daha çox space */
+    }
+    
     .restaurant-name {
         font-size: 1.75rem;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.5rem; /* Daha çox margin */
     }
     
     .restaurant-name i {
@@ -1208,6 +1217,7 @@ body.admin-mode .menu-item:hover .delete-btn {
     
     .restaurant-subtitle {
         font-size: 1rem;
+        margin-bottom: 1rem; /* Alt boşluq əlavə et */
     }
     
     .menu-grid {
@@ -2208,17 +2218,24 @@ html {
         padding: 1.5rem;
     }
     
-    /* Header kiçik ekranlarda daha kompakt */
+    /* Header kiçik ekranlarda daha rahat */
     .header {
-        padding: 1rem;
+        min-height: 280px; /* Çox kiçik ekranlar üçün daha böyük */
+        padding: 2.5rem 1rem; /* Daha rahat */
+    }
+    
+    .header-content {
+        padding-top: 40px; /* Daha çox boşluq */
     }
     
     .restaurant-name {
-        font-size: 1.5rem;
+        font-size: 1.6rem; /* Az kiçiltdik */
+        margin-bottom: 0.75rem; /* Daha çox boşluq */
     }
     
     .restaurant-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem; /* Daha çox alt boşluq */
     }
     
     /* Filter düymələri daha kiçik */

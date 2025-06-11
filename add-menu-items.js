@@ -8,10 +8,24 @@ function addMenuItems() {
         return;
     }
 
-    // Show loading message
-    console.log('Şəkillər yüklənir, 3 saniyə gözləyin...');
+    // Check if items already exist in localStorage
+    const existingItems = localStorage.getItem('menuItems');
+    if (existingItems) {
+        try {
+            const parsedItems = JSON.parse(existingItems);
+            if (parsedItems.length > 0) {
+                console.log('Məhsullar localStorage-dan yükləndi, yenidən yükləmə tələb olunmur');
+                return; // Don't reload if items already exist
+            }
+        } catch (error) {
+            console.log('localStorage məlumatında xəta:', error);
+        }
+    }
+
+    // Show loading message for new data
+    console.log('Yeni məhsullar yüklənir, 1 saniyə gözləyin...');
     if (window.restaurantApp.showNotification) {
-        window.restaurantApp.showNotification('Meniu yüklənir, zəhmət olmasa gözləyin...', 'info');
+        window.restaurantApp.showNotification('Meniu kraunasi, palaukite...', 'info');
     }
 
     const menuItems = [
@@ -277,7 +291,7 @@ function addMenuItems() {
     ];
     
 
-    // Add menu items with 3 second delay for images to load properly
+    // Add menu items with 1 second delay for images to load properly
     setTimeout(() => {
         menuItems.forEach((item, index) => {
             // Create a new item object
@@ -302,7 +316,7 @@ function addMenuItems() {
         // Render after all items are added
         window.restaurantApp.renderMenu();
         console.log('All menu items added successfully! Saved to localStorage for faster loading.');
-    }, 3000); // 3 second delay for images to load
+    }, 1000); // 1 second delay for images to load
 }
 
 // Auto-run when page loads (since loaded directly in HTML)

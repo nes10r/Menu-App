@@ -8,6 +8,12 @@ function addMenuItems() {
         return;
     }
 
+    // Show loading message
+    console.log('Şəkillər yüklənir, 3 saniyə gözləyin...');
+    if (window.restaurantApp.showNotification) {
+        window.restaurantApp.showNotification('Meniu yüklənir, zəhmət olmasa gözləyin...', 'info');
+    }
+
     const menuItems = [
         {
             name: "Vistiena ant grilio",
@@ -271,30 +277,32 @@ function addMenuItems() {
     ];
     
 
-    // Add all menu items immediately (no delays)
-    menuItems.forEach((item, index) => {
-        // Create a new item object
-        const newItem = {
-            id: Date.now() + index,
-            name: item.name,
-            description: item.description,
-            price: item.price,
-            category: item.category,
-            image: item.image
-        };
+    // Add menu items with 3 second delay for images to load properly
+    setTimeout(() => {
+        menuItems.forEach((item, index) => {
+            // Create a new item object
+            const newItem = {
+                id: Date.now() + index,
+                name: item.name,
+                description: item.description,
+                price: item.price,
+                category: item.category,
+                image: item.image
+            };
 
-        // Add to menu items array
-        window.restaurantApp.menuItems.push(newItem);
+            // Add to menu items array
+            window.restaurantApp.menuItems.push(newItem);
+            
+            console.log(`Added: ${item.name} - €${item.price}`);
+        });
+
+        // Save to localStorage for faster loading next time
+        localStorage.setItem('menuItems', JSON.stringify(window.restaurantApp.menuItems));
         
-        console.log(`Added: ${item.name} - €${item.price}`);
-    });
-
-    // Save to localStorage for faster loading next time
-    localStorage.setItem('menuItems', JSON.stringify(window.restaurantApp.menuItems));
-    
-    // Render immediately after all items are added
-    window.restaurantApp.renderMenu();
-    console.log('All menu items added successfully! Saved to localStorage for faster loading.');
+        // Render after all items are added
+        window.restaurantApp.renderMenu();
+        console.log('All menu items added successfully! Saved to localStorage for faster loading.');
+    }, 3000); // 3 second delay for images to load
 }
 
 // Auto-run when page loads (since loaded directly in HTML)

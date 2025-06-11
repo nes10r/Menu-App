@@ -10,8 +10,8 @@ class RestaurantApp {
         // Force clear inconsistent data but don't reload
         this.forceDataReset();
         
-        // Load existing menu items from localStorage immediately
-        this.loadExistingMenuItems();
+        // Skip localStorage loading - wait for fresh data with images
+        // this.loadExistingMenuItems();
         
         // Check if we should skip auto-loading
         if (sessionStorage.getItem('skipAutoLoad') === 'true') {

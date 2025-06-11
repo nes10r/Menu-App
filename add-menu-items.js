@@ -238,35 +238,35 @@ function addMenuItems() {
             description: "Klasikinis gaivusis gėrimas su kofeinu.",
             price: 2.50,
             category: "gerimai",
-            image: "https://imageproxy.wolt.com/menu/menu-images/shared/ab2b8d7a-0a65-11ee-b587-62ba5b42e3e7_coca_cola_0.33l.jpg"
+            image: "https://cdn3.evostore.io/productimages/vow_api/l/arn10943_01.jpg"
         },
         {
             name: "Fanta",
             description: "Apelsinų skonio gaivusis gėrimas.",
             price: 2.50,
             category: "gerimai",
-            image: "https://imageproxy.wolt.com/menu/menu-images/shared/cb7a5b1c-0a65-11ee-b587-62ba5b42e3e7_fanta_0.33l.jpg"
+            image: "image.png"
         },
         {
             name: "Ayranas",
             description: "Tradicinis azerbaidžaniškas jogurto gėrimas.",
             price: 2.00,
             category: "gerimai",
-            image: "https://imageproxy.wolt.com/menu/menu-images/shared/4e1b2f5a-8a4f-11ee-8c36-8af49fd63074_ayran.jpg"
+            image: "image.png"
         },
         {
-            name: "Arbata",
+            name: "Chai",
             description: "Tradicinė azerbaidžaniška arbata, kvapi ir šilta.",
             price: 1.50,
             category: "gerimai",
-            image: "https://imageproxy.wolt.com/menu/menu-images/shared/35c1f8c2-fe19-11ed-82f6-622b3c3a2b67__azeri_tea.jpg"
+            image: "https://kirikoklava.com/wp-content/uploads/2018/03/kcay.jpg"
         },
         {
-            name: "Kava",
+            name: "Cofee",
             description: "Šviežiai paruošta kava, stipri ir aromatinga.",
             price: 3.00,
             category: "gerimai",
-            image: "https://imageproxy.wolt.com/menu/menu-images/shared/8f9a7b24-0a66-11ee-b587-62ba5b42e3e7_coffee_americano.jpg"
+            image: "https://www.bakenroll.az/en/image/americano.jpg"
         }
     ];
     

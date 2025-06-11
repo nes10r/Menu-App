@@ -10,6 +10,9 @@ class RestaurantApp {
         // Force clear inconsistent data but don't reload
         this.forceDataReset();
         
+        // Load existing menu items from localStorage immediately
+        this.loadExistingMenuItems();
+        
         // Check if we should skip auto-loading
         if (sessionStorage.getItem('skipAutoLoad') === 'true') {
             sessionStorage.removeItem('skipAutoLoad');
@@ -539,6 +542,22 @@ class RestaurantApp {
                 document.body.removeChild(notification);
             }, 300);
         }, 3000);
+    }
+
+    // Load existing menu items from localStorage immediately
+    loadExistingMenuItems() {
+        const savedItems = localStorage.getItem('menuItems');
+        if (savedItems) {
+            try {
+                this.menuItems = JSON.parse(savedItems);
+                if (this.menuItems.length > 0) {
+                    console.log(`${this.menuItems.length} məhsul localStorage-dan dərhal yükləndi`);
+                    this.renderMenu();
+                }
+            } catch (error) {
+                console.log('localStorage məhsullarında xəta:', error);
+            }
+        }
     }
 
     // Load menu items - script loaded directly in HTML

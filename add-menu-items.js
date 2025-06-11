@@ -238,64 +238,63 @@ function addMenuItems() {
             description: "Klasikinis gaivusis gėrimas su kofeinu.",
             price: 2.50,
             category: "gerimai",
-            image: "https://cdn3.evostore.io/productimages/vow_api/l/arn10943_01.jpg"
+            image: "https://imageproxy.wolt.com/menu/menu-images/61113b1ca8c749525ea95a8a/637c51bc-1ec8-11ed-992f-c28c128b51c4_1111.jpeg"
         },
         {
             name: "Fanta",
             description: "Apelsinų skonio gaivusis gėrimas.",
             price: 2.50,
             category: "gerimai",
-            image: "image.png"
+            image: "https://imageproxy.wolt.com/menu/menu-images/60fe99fb16ca79165aa325ca/ea7e695a-ceff-11ee-a511-d23952275139_11111.png"
         },
         {
             name: "Ayranas",
             description: "Tradicinis azerbaidžaniškas jogurto gėrimas.",
             price: 2.00,
             category: "gerimai",
-            image: "image.png"
+            image: "https://imageproxy.wolt.com/menu/menu-images/6556166df9c00310bed0cf20/9a497300-a563-11ee-890a-6a83b062037e_4760081600747.jpg"
         },
         {
             name: "Chai",
             description: "Tradicinė azerbaidžaniška arbata, kvapi ir šilta.",
             price: 1.50,
             category: "gerimai",
-            image: "https://kirikoklava.com/wp-content/uploads/2018/03/kcay.jpg"
+            image: "https://imageproxy.wolt.com/menu/menu-images/64258748c41fa24e7dced0b4/4d559a66-dd03-11ed-a734-4e0f51a3faf1_c125f792_dcf9_11ed_a02d_7a0d501274d7_64.jpeg"
         },
         {
             name: "Cofee",
             description: "Šviežiai paruošta kava, stipri ir aromatinga.",
             price: 3.00,
             category: "gerimai",
-            image: "https://www.bakenroll.az/en/image/americano.jpg"
+            image: "https://imageproxy.wolt.com/assets/67b0b54fb6b7de2eca591687"
         }
     ];
     
 
-    // Add each menu item
+    // Add all menu items immediately (no delays)
     menuItems.forEach((item, index) => {
-        setTimeout(() => {
-            // Create a new item object
-            const newItem = {
-                id: Date.now() + index,
-                name: item.name,
-                description: item.description,
-                price: item.price,
-                category: item.category,
-                image: item.image
-            };
+        // Create a new item object
+        const newItem = {
+            id: Date.now() + index,
+            name: item.name,
+            description: item.description,
+            price: item.price,
+            category: item.category,
+            image: item.image
+        };
 
-            // Add to menu items array
-            window.restaurantApp.menuItems.push(newItem);
-            
-            console.log(`Added: ${item.name} - €${item.price}`);
-        }, index * 100); // Small delay between additions
+        // Add to menu items array
+        window.restaurantApp.menuItems.push(newItem);
+        
+        console.log(`Added: ${item.name} - €${item.price}`);
     });
 
-    // Render after all items are added
-    setTimeout(() => {
-        window.restaurantApp.renderMenu();
-        console.log('All menu items added successfully!');
-    }, menuItems.length * 100 + 500);
+    // Save to localStorage for faster loading next time
+    localStorage.setItem('menuItems', JSON.stringify(window.restaurantApp.menuItems));
+    
+    // Render immediately after all items are added
+    window.restaurantApp.renderMenu();
+    console.log('All menu items added successfully! Saved to localStorage for faster loading.');
 }
 
 // Auto-run when page loads (since loaded directly in HTML)

@@ -71,7 +71,7 @@ body {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important; /* Desktop üçün tam görünsün */
+    object-fit: cover !important; /* Bütün sahəni doldursun */
     object-position: center !important; /* Mərkəzdə yerləşdir */
     z-index: 0 !important; /* Background kimi */
     display: block !important;
@@ -708,9 +708,9 @@ body {
         padding-top: 40px; /* Orta boşluq */
     }
     
-    /* Small desktop üçün contain */
+    /* Small desktop üçün cover - boşluq qalmasın */
     .header-banner {
-        object-fit: contain !important; /* Small desktop üçün contain */
+        object-fit: cover !important; /* Sağ sol boşluq qalmasın */
         object-position: center !important;
     }
     
@@ -917,7 +917,7 @@ body {
     }
     
     .header-banner {
-        object-fit: contain !important; /* Böyük ekran üçün tam contain */
+        object-fit: cover !important; /* Yuxarı aşağı boşluq qalmasın */
         object-position: center !important;
     }
     

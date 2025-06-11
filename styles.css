@@ -112,6 +112,13 @@ body {
     font-size: 2rem;
 }
 
+.menu-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(70%) sepia(98%) saturate(1000%) hue-rotate(15deg);
+}
+
 .restaurant-subtitle {
     font-size: 1.1rem;
     opacity: 0.9;
@@ -1267,6 +1274,11 @@ body.admin-mode .menu-item:hover .delete-btn {
     
     .restaurant-name i {
         font-size: 1.5rem;
+    }
+    
+    .menu-icon {
+        width: 1.5rem;
+        height: 1.5rem;
     }
     
     .restaurant-subtitle {

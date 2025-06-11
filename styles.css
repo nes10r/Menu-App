@@ -71,7 +71,8 @@ body {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: fill !important; /* Div-i tam doldursun */
+    object-fit: cover !important; /* Proportions saxlanır */
+    object-position: center !important; /* Mərkəzdə yerləşdir */
     z-index: 0 !important; /* Background kimi */
     display: block !important;
     visibility: visible !important;
@@ -1198,12 +1199,12 @@ body.admin-mode .menu-item:hover .delete-btn {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
-        min-height: 250px; /* Mobile üçün daha böyük */
-        padding: 2rem 1rem; /* Daha rahat padding */
+        min-height: 200px; /* Banner proporsiyaları üçün optimal */
+        padding: 1.5rem 1rem; /* Balanslaşdırılmış padding */
     }
     
     .header-content {
-        padding-top: 30px; /* Mobile üçün daha çox space */
+        padding-top: 15px; /* Banner üçün optimal */
     }
     
     .restaurant-name {
@@ -2220,12 +2221,12 @@ html {
     
     /* Header kiçik ekranlarda daha rahat */
     .header {
-        min-height: 280px; /* Çox kiçik ekranlar üçün daha böyük */
-        padding: 2.5rem 1rem; /* Daha rahat */
+        min-height: 180px; /* Banner sıxılmaması üçün optimal */
+        padding: 1.5rem 1rem; /* Balanslaşdırılmış */
     }
     
     .header-content {
-        padding-top: 40px; /* Daha çox boşluq */
+        padding-top: 15px; /* Banner optimal */
     }
     
     .restaurant-name {

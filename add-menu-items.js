@@ -234,38 +234,38 @@ function addMenuItems() {
             image: ""
         },
         {
-            name: "Cola",
-            description: "Sərinləşdirici qazlı içki, klassik dad.",
+            name: "Coca Cola",
+            description: "Klasikinis gaivusis gėrimas su kofeinu.",
             price: 2.50,
-            category: "gerimlər",
+            category: "gerimai",
             image: "https://imageproxy.wolt.com/menu/menu-images/shared/ab2b8d7a-0a65-11ee-b587-62ba5b42e3e7_coca_cola_0.33l.jpg"
         },
         {
             name: "Fanta",
-            description: "Portağal dadlı qazlı içki, təzə və dadlı.",
+            description: "Apelsinų skonio gaivusis gėrimas.",
             price: 2.50,
-            category: "gerimlər",
+            category: "gerimai",
             image: "https://imageproxy.wolt.com/menu/menu-images/shared/cb7a5b1c-0a65-11ee-b587-62ba5b42e3e7_fanta_0.33l.jpg"
         },
         {
-            name: "Ayran",
-            description: "Ənənəvi Azərbaycan ayranı, təbii və təzə.",
+            name: "Ayranas",
+            description: "Tradicinis azerbaidžaniškas jogurto gėrimas.",
             price: 2.00,
-            category: "gerimlər",
+            category: "gerimai",
             image: "https://imageproxy.wolt.com/menu/menu-images/shared/4e1b2f5a-8a4f-11ee-8c36-8af49fd63074_ayran.jpg"
         },
         {
-            name: "Çay",
-            description: "Ənənəvi Azərbaycan çayı, isti və ətirli.",
+            name: "Arbata",
+            description: "Tradicinė azerbaidžaniška arbata, kvapi ir šilta.",
             price: 1.50,
-            category: "gerimlər",
+            category: "gerimai",
             image: "https://imageproxy.wolt.com/menu/menu-images/shared/35c1f8c2-fe19-11ed-82f6-622b3c3a2b67__azeri_tea.jpg"
         },
         {
-            name: "Coffee",
-            description: "Təzə dəm edilmiş qəhvə, güclü və dadlı.",
+            name: "Kava",
+            description: "Šviežiai paruošta kava, stipri ir aromatinga.",
             price: 3.00,
-            category: "gerimlər",
+            category: "gerimai",
             image: "https://imageproxy.wolt.com/menu/menu-images/shared/8f9a7b24-0a66-11ee-b587-62ba5b42e3e7_coffee_americano.jpg"
         }
     ];

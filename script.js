@@ -243,7 +243,7 @@ class RestaurantApp {
             'kiti': 'Kiti patiekalai',
             'sriuba': 'Sriubos',
             'salotos': 'Salotos',
-            'gerimlər': 'GƏRİMAL'
+            'gerimai': 'Gėrimai'
         };
         return categoryNames[category] || category;
     }

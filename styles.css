@@ -46,7 +46,7 @@ body {
     text-align: center;
     box-shadow: var(--shadow);
     position: relative;
-    min-height: 220px; /* Azaldılmış hündürlük */
+    min-height: 280px; /* Desktop üçün banner tam görünsün */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     overflow: hidden;
 }
@@ -71,7 +71,7 @@ body {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Proportions saxlanır */
+    object-fit: contain !important; /* Desktop üçün tam görünsün */
     object-position: center !important; /* Mərkəzdə yerləşdir */
     z-index: 0 !important; /* Background kimi */
     display: block !important;
@@ -94,7 +94,7 @@ body {
     z-index: 2; /* Overlay üzərində */
     max-width: 600px;
     margin: 0 auto;
-    padding-top: 20px; /* Azaldılmış padding */
+    padding-top: 50px; /* Desktop üçün daha böyük */
 }
 
 .restaurant-name {
@@ -1207,6 +1207,12 @@ body.admin-mode .menu-item:hover .delete-btn {
         padding-top: 15px; /* Banner üçün optimal */
     }
     
+    /* Mobile üçün banner cover olsun ki sıxılmasın */
+    .header-banner {
+        object-fit: cover !important; /* Mobile üçün cover */
+        object-position: center !important;
+    }
+    
     .restaurant-name {
         font-size: 1.75rem;
         margin-bottom: 0.5rem; /* Daha çox margin */
@@ -2227,6 +2233,12 @@ html {
     
     .header-content {
         padding-top: 15px; /* Banner optimal */
+    }
+    
+    /* Kiçik mobil üçün də banner cover */
+    .header-banner {
+        object-fit: cover !important; /* Mobil üçün cover */
+        object-position: center !important;
     }
     
     .restaurant-name {

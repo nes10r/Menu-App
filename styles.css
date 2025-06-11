@@ -76,7 +76,6 @@ body {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    transition: opacity 0.5s ease !important;
 }
 
 .header-overlay {

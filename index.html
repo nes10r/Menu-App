@@ -53,7 +53,7 @@
             <!-- Header -->
             <header class="header">
                 <div class="header-banner-container">
-                    <img src="./Banner.jpg" alt="Restaurant Banner" class="header-banner" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('banner-failed');">
+                    <img src="Banner.jpg" alt="Restaurant Banner" class="header-banner" onload="console.log('Banner yükləndi!');" onerror="console.log('Banner error!'); this.style.display='none'; this.parentElement.classList.add('banner-failed');">
                 </div>
                 <div class="header-overlay"></div>
                 <div class="header-content">

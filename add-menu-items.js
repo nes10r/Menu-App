@@ -40,14 +40,14 @@ function addMenuItems() {
         {
             name: "Jautienos kepenėly kebabas",
             description: "Jautienos kepenėlės, marinuotos ir keptos ant grilio.",
-            price: 8.70,
+            price: 8.80,
             category: "pagrindinis",
             image: "https://imageproxy.wolt.com/menu/menu-images/shared/e548e670-e045-11ee-95a6-2ab725359fef_ciyer_kabab.jpg"
         },
         {
             name: "Avienos iešmo kebabas",
             description: "Avienos gabaliukai, kepti ant iešmo su prieskoniais.",
-            price: 16.40,
+            price: 16.70,
             category: "pagrindinis",
             image: "https://imageproxy.wolt.com/menu/menu-images/61f3f450b226af4b51d443cd/93b44846-80e2-11ec-a5ce-72b300c14780_quzu_tike.jpeg"
         },
@@ -59,7 +59,7 @@ function addMenuItems() {
             image: "https://imageproxy.wolt.com/menu/menu-images/6392e6f7a3e66b1094c85d1e/241918ee-7796-11ed-94ed-6e8b3e9bfb77_10.jpeg"
         },
         {
-            name: "Vistienos kile kebabas",
+            name: "Vistienos lule kebabas",
             description: "Vištienos filė, marinuota ir kepta ant grilio.",
             price: 11.80,
             category: "pagrindinis",
@@ -232,6 +232,41 @@ function addMenuItems() {
             price: 6.8,
             category: "salotos",
             image: ""
+        },
+        {
+            name: "Cola",
+            description: "Sərinləşdirici qazlı içki, klassik dad.",
+            price: 2.50,
+            category: "gerimlər",
+            image: "https://imageproxy.wolt.com/menu/menu-images/shared/ab2b8d7a-0a65-11ee-b587-62ba5b42e3e7_coca_cola_0.33l.jpg"
+        },
+        {
+            name: "Fanta",
+            description: "Portağal dadlı qazlı içki, təzə və dadlı.",
+            price: 2.50,
+            category: "gerimlər",
+            image: "https://imageproxy.wolt.com/menu/menu-images/shared/cb7a5b1c-0a65-11ee-b587-62ba5b42e3e7_fanta_0.33l.jpg"
+        },
+        {
+            name: "Ayran",
+            description: "Ənənəvi Azərbaycan ayranı, təbii və təzə.",
+            price: 2.00,
+            category: "gerimlər",
+            image: "https://imageproxy.wolt.com/menu/menu-images/shared/4e1b2f5a-8a4f-11ee-8c36-8af49fd63074_ayran.jpg"
+        },
+        {
+            name: "Çay",
+            description: "Ənənəvi Azərbaycan çayı, isti və ətirli.",
+            price: 1.50,
+            category: "gerimlər",
+            image: "https://imageproxy.wolt.com/menu/menu-images/shared/35c1f8c2-fe19-11ed-82f6-622b3c3a2b67__azeri_tea.jpg"
+        },
+        {
+            name: "Coffee",
+            description: "Təzə dəm edilmiş qəhvə, güclü və dadlı.",
+            price: 3.00,
+            category: "gerimlər",
+            image: "https://imageproxy.wolt.com/menu/menu-images/shared/8f9a7b24-0a66-11ee-b587-62ba5b42e3e7_coffee_americano.jpg"
         }
     ];
     

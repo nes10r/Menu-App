@@ -23,7 +23,7 @@ function addMenuItems() {
     }
 
     // Show loading message for new data
-    console.log('Yeni məhsullar yüklənir, 1 saniyə gözləyin...');
+    console.log('Yeni məhsullar yüklənir, 0.3 saniyə gözləyin...');
     if (window.restaurantApp.showNotification) {
         window.restaurantApp.showNotification('Meniu kraunasi, palaukite...', 'info');
     }
@@ -291,7 +291,7 @@ function addMenuItems() {
     ];
     
 
-    // Add menu items with 1 second delay for images to load properly
+    // Add menu items with 0.3 second delay for images to load properly
     setTimeout(() => {
         menuItems.forEach((item, index) => {
             // Create a new item object
@@ -316,7 +316,7 @@ function addMenuItems() {
         // Render after all items are added
         window.restaurantApp.renderMenu();
         console.log('All menu items added successfully! Saved to localStorage for faster loading.');
-    }, 1000); // 1 second delay for images to load
+    }, 300); // 0.3 second delay for images to load
 }
 
 // Auto-run when page loads (since loaded directly in HTML)

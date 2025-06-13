@@ -1,0 +1,8 @@
+{
+  "appId": "com.restaurant.menu",
+  "appName": "Azerbaidžaniecių ugnies kepsnine",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

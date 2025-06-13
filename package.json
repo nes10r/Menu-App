@@ -1,0 +1,25 @@
+{
+  "name": "menu---app",
+  "version": "1.0.0",
+  "description": "Tam funksional, çox səhifəli restoran saytı. Gözəl dizayn, mobil-responsive və Litva dilində interfeys.",
+  "main": "add-menu-items.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nes10r/Menu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nes10r/Menu/issues"
+  },
+  "homepage": "https://github.com/nes10r/Menu#readme",
+  "dependencies": {
+    "@capacitor/android": "^7.3.0",
+    "@capacitor/cli": "^7.3.0",
+    "@capacitor/core": "^7.3.0"
+  }
+}

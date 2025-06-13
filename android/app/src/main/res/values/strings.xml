@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Azerbaidžaniecių ugnies kepsnine</string>
+    <string name="title_activity_main">Azerbaidžaniecių ugnies kepsnine</string>
+    <string name="package_name">com.restaurant.menu</string>
+    <string name="custom_url_scheme">com.restaurant.menu</string>
+</resources>

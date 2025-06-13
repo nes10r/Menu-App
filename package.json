@@ -5,7 +5,7 @@
   "main": "add-menu-items.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'No build step needed'"
+    "build": "xcopy src www /E /I /Y"
   },
   "repository": {
     "type": "git",
